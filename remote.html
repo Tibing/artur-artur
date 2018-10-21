@@ -18,6 +18,9 @@
 </head>
 
 <body style="min-width:350px; padding-left: 20px">
+<div class="row" style="padding-left: 8px; padding-right: 8px">
+    <a id="optionsBtn" href="options.html"><img height="24px" width="24px" src="images/ic_settings.png" alt="Configuration" style="float: right;"/></a>
+</div>
 
 <div id="focusAnchor" tabindex="0"></div>
 <div style="min-height: 15px"><div id="profileRow" class="row" style="display: none; text-align: center;">
@@ -25,7 +28,26 @@
 </div></div>
 
 <div id="remoteRow" class="row">
-    <button id="previousBtn"><img src="images/prev.png" alt="Previous"></button><button id="rewindBtn"><img src="images/rw.jpg" alt="Step Back"/></button><span class="playpause"><button id="stopBtn"><img src="images/stop.jpg" alt="Stop"/></button><button id="playBtn"><img src="images/playpause.gif" alt="PlayPause"/></button></span><button id="fastForwardBtn"><img src="images/ff.jpg" alt="Step Forward"/></button><button id="nextBtn"><img src="images/skip.png" alt="Skip"/></button>
+    <button id="previousBtn">
+        <img src="images/ic_skip_previous.png" alt="Previous">
+    </button>
+    <button id="rewindBtn">
+        <img src="images/ic_fast_rewind.png" alt="Step Back"/>
+    </button>
+    <span class="playpause">
+        <button id="stopBtn">
+            <img src="images/ic_stop.png" alt="Stop"/>
+        </button>
+        <button id="playBtn">
+            <img src="images/ic_play_arrow.png" alt="PlayPause"/>
+        </button>
+    </span>
+    <button id="fastForwardBtn">
+        <img src="images/ic_fast_forward.png" alt="Step Forward"/>
+    </button>
+    <button id="nextBtn">
+        <img src="images/ic_skip_next.png" alt="Skip"/>
+    </button>
 </div>
 
 <div id="seekerRow" class="row">
@@ -80,9 +102,6 @@
         </span>
     </div>
 </div>
-<!--<div class="btn-toolbar">-->
-    <!--<button id="testBtn" class="btn btn-small">Test</button>-->
-<!--</div>-->
 
 <div id="favouritesRow" class="row">
     <ul class="nav nav-tabs" style="display: none;">
@@ -103,12 +122,6 @@
     </table>
 </div>
 
-<div class="row" style="text-align: center">
-    <a id="optionsBtn" href="options.html"><img height="48px" width="48px" src="images/configuration.jpg" alt="Configuration" style="float: left; margin-left: 3px;"/></a>
-    <a target="_blank" href="http://kodi.tv/" title="Kodi"><img src="images/kodi.png" alt="Kodi" style="float: right; padding-right: 10px;"/></a>
-    <div id="playlistTextContainer" style="padding-top: 12px; display: none;"><span id="playlistText" class="label label-success"></span></div>
-    <div id="warningTextContainer" style="padding: 12px 0; text-align: center;"><span class="label label-warning">Connecting...</span></div>
-</div>
 <div id="setupTooltip" class="tooltip fade right in" style="display: none; left: 50px; bottom: 11px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">Click here to setup your Play to Kodi extension</div></div>
 <div id="updateTooltip" class="tooltip fade right in" style="display: none; left: 50px; bottom: 11px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">Play to Kodi updated!<br/>Changelist can be found here</div></div>
 <div id="scrollerTime" style="display: none;"></div>

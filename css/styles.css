@@ -8,7 +8,6 @@
     border: none;
     padding: 0;
     width: 40px;
-    margin: 0 3px;
 }
 
 #remoteRow button:hover {
@@ -18,10 +17,8 @@
 #remoteRow .playpause {
     border: 1px solid #eee;
     background-color: #fefefe;
-
-    padding: 12px 10px 12px 5px;
-    margin: 0 2px;
-    border-radius: 5px;
+    padding: 8px;
+    border-radius: 4px;
 }
 
 #volumeRow {
@@ -78,13 +75,13 @@
 
 #buttonsRow .btn-group .single-action-btn {
     padding: 5px;
-    margin-left: -1px;
+    margin-left: 0;
 }
 
 #buttonsRow .btn-group .multi-video-btn {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
-    padding: 5px 7px;
+    padding: 4px 8px;
 }
 
 .video-menu {
@@ -94,7 +91,7 @@
 }
 
 .row {
-    margin: 15px auto;
+    margin: 8px auto;
 }
 
 .dropdown-menu .disabled>a:hover {
@@ -105,7 +102,6 @@
     padding: 5px 8px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    margin-left: -1px;
 }
 
 #scrollerTime {
