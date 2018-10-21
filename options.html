@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/shared.js"></script>
+    <script type="text/javascript" src="js/options.js"></script>
+    <style>
+        .tab-pane {
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+<div class="row">
+    <div class="span7">
+        <form class="form-horizontal">
+            <legend style="padding-left: 25px;">Options</legend>
+            <div class="tabbable">
+                <ul class="nav nav-tabs" style="padding: 0 25px;">
+                    <li class="active"><a href="#kodiHost" data-toggle="tab">Kodi Host(s)</a></li>
+                    <li><a href="#general" data-toggle="tab">Others</a></li>
+                    <li><a href="#changelist" data-toggle="tab">Changelist</a></li>
+                    <li><a href="#donate" data-toggle="tab">Donate</a></li>
+                    <li><a href="#help" data-toggle="tab">Help</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="kodiHost">
+                        <div id="profileControlGroup" class="control-group profile-group" style="display: none;">
+                            <label class="control-label" for="profiles">Profile</label>
+                            <div class="controls">
+                                <select id="profiles"></select>
+                            </div>
+                            <div class="controls" style="margin-top: 10px;">
+                                <button id="newProfileBtn" class="btn" type="button">New</button>
+                                <button id="deleteProfileBtn" class="btn" type="button">Delete</button>
+                            </div>
+                        </div>
+                        <div class="control-group profile-group" style="display: none;">
+                            <label class="control-label" for="name">Name</label>
+                            <div class="controls">
+                                <input type="text" id="name" placeholder="Name (eg. Lounge Room TV)">
+                            </div>
+                        </div>
+                        <div id="urlControlGroup" class="control-group">
+                            <label class="control-label" for="url">URL</label>
+                            <div class="controls">
+                                <input type="text" id="url" placeholder="Hostname / IP Address">
+                            </div>
+                        </div>
+                        <div id="portControlGroup" class="control-group">
+                            <label class="control-label" for="port">Port</label>
+                            <div class="controls">
+                                <input type="text" id="port" placeholder="Port">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="username">Username (optional)</label>
+                            <div class="controls">
+                                <input type="text" id="username" placeholder="Username">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="password">Password (optional)</label>
+                            <div class="controls">
+                                <input type="password" id="password" placeholder="Password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="general">
+                        <div class="control-group">
+                            <label class="control-label" for="showRepeat">Show Repeat Button</label>
+                            <div class="controls">
+                                <select id="showRepeat">
+                                    <option value="never">Never</option>
+                                    <option value="always">Always</option>
+                                    <option value="dropdown">Hide in Dropdown</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="magnetAddOn">Add-On for Torrent & Magnet Links</label>
+                            <div class="controls">
+                                <select id="magnetAddOn">
+                                    <option value="xbmctorrent">XBMCTorrent</option>
+                                    <option value="pulsar">Pulsar</option>
+                                    <option value="quasar">Quasar</option>
+                                    <option value="kmediatorrent">KMediaTorrent</option>
+                                    <option value="torrenter">Torrenter</option>
+                                    <option value="yatp">YATP</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="enableMultiHost">Enable Multi Kodi Hosts</label>
+                            <div class="controls">
+                                <input id="enableMultiHost" type="checkbox"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="enableDebugLogs">Enable Debug Logs</label>
+                            <div class="controls">
+                                <input id="enableDebugLogs" type="checkbox"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="changelist">
+                        <div style="margin: 0 25px">
+                            <p>
+                                <strong>Update 1.9.0</strong>
+                                <ul>
+                                    <li>Fixed Facebook video support (with help from predakanga)</li>
+                                    <li>Added a couple of new supported sites (thanks to open source contributions)</li>
+                                    <li>Remove unnecessary error logging related to context menu support</li>
+                                    <li>Some fixes for Firefox support</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.8.1</strong>
+                                <ul>
+                                    <li>Fixed getting videos from YouTube playlists</li>
+                                    <li>Changed deprecated plugin.video.youtube API to new version</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.8.0rc1</strong>
+                                <ul>
+                                    <li>Added support for seasonvar.ru (by rshadow)</li>
+                                    <li>Fixed SVTPlay (by Deph0)</li>
+                                    <li>Fixed cda.pl (by m32)</li>
+                                    <li>Some modifications for Firefox support (by maciex)</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.7.8.2</strong>
+                                <ul>
+                                    <li>Updated to work with Twitch add-on v1.4. Backwards compatible.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.7.8.1</strong>
+                                <ul>
+                                    <li>Note: The new YouTube UI has broken support for context menus on the video, and it has proven to be a very huge pain in the ass to fix. I'm working on it.</li>
+                                    <li>Added Quasar client support (Thanks to phuonglm)</li>
+                                    <li>Added support for Cda.pl (Thanks to maciej-rosiek)</li>
+                                    <li>Removed references to XBMC in the settings. (Thanks to joshuahenson)</li>
+                                    <li>Added support for .m4v video files.</li>
+                                    <li>Fixed an issue with query strings on video links.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.7.7.2</strong>
+                                <ul>
+                                    <li>Note: The new YouTube UI has broken support for context menus on the video, and it has proven to be a very huge pain in the ass to fix. I'm working on it.</li>
+                                    <li>Fixed context menus on user page and subscription page (Possibly every other page where it didn't work.</li>
+                                    <li>Fixed support for Yle Areena & ruutu.fi (Thanks to amergin for this fix)</li>
+                                    <li>Fixed an issue where the seeker would occasionally move at an incorrect speed, or have an incorrect time to the video.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.7.7.1</strong>
+                                <ul>
+                                    <li>Thanks to everyone who donated!! You guys are the best!!</li>
+                                    <li>Fixed support for ARD Mediathek & ZDF Mediathek (Thanks to DerGoTo for this fix)</li>
+                                    <li>Fixed SVG Anchors (Thanks to Le Wang for this fix)</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.7.7.0</strong>
+                                <ul>
+                                    <li>Added support for torrenter for torrent streaming.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.7.6.0</strong>
+                                <ul>
+                                    <li>Added support for mp4upload.com (Thanks to inv3rse)</li>
+                                    <li>Fixed YouTube playlist support.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.7.5.1 - 1.7.5.4</strong>
+                                <ul>
+                                    <li>Make "Pause on Play" work when using the "Play Now" button on YouTube</li>
+                                    <li>Fixed an issue with enabling/disabling multi hosts.</li>
+                                    <li>More fixes for Vessel.</li>
+                                    <li>Fix debug logging toggle</li>
+                                    <li>Add more logging to help pinpoint problem with Vessel</li>
+                                    <li>Fixed a bug where the "Play Now" context menu button wouldn't work.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.7.5.0</strong>
+                                <ul>
+                                    <li>Added support for SVTPlay.se</li>
+                                    <li>Added a "Resume" context menu button for YouTube. This will play the video on Kodi and resume from where you stopped on the browser. (Code work by siezon)</li>
+                                    <li>Fixed CSP errors (Code work by wader)</li>
+                                    <li>Videos on YouTube, Vessel and AnimeLab will auto pause when sent to Kodi.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.7.4.0</strong>
+                                <ul>
+                                    <li>Fixed support for Lynda.com. Only support HTML5 player. Please change this in your Lynda.com site preferences.</li>
+                                    <li>Added support for Vessel</li>
+                                    <li>Added support for kmediatorrent add-on (Thanks to zewelor)</li>
+                                    <li>Fixed support for TwitchTV past broadcasts where only some broadcasts work</li>
+                                    <li>Added support for streamcloud (Thanks for BakeRolls)</li>
+                                    <li>Added Vimeo support using bromix's Vimeo add-on (Thanks to zewelor)</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.7.3.0</strong>
+                                <ul>
+                                    <li>Added support Lynda.com.</li>
+                                    <li>Added support for Dailymotion Live. (Still depends on whether your add-on works for you, if it doesn't, then this doesn't either D:)</li>
+                                    <li>Added support for urgant.ru and kino-live.org (Many thanks to usrenmae for the work!)</li>
+                                    <li>Finally, update XBMC logo to Kodi logo.</li>
+                                    <li>Did you know? You can control Kodi by using your keyboard! Just open up the Play to Kodi extension, and use the Up/Down/Left/Right/Backspace/Enter keys to navigate on Kodi. Additionally, you could also use the I (for Info) and C (for Context Menu) keys.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.7.2.0</strong>
+                                <ul>
+                                    <li>Added support to play Twitch TV past broadcasts.</li>
+                                    <li>Fixed support for Soundcloud.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.7.1.4</strong>
+                                <ul>
+                                    <li>Fixed a cosmetic issue where the time indicators would be positioned wrongly when multi host is not enabled.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.7.1.3</strong>
+                                <ul>
+                                    <li>Fixed a bug where Twitch live videos cannot be played when there is an underscore in the URL. (Thanks to Andre for the patch!)</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.7.1.2</strong>
+                                <ul>
+                                    <li>Fixed a bug where the Google API would be called regardless if embedded videos were found. (Patch by ZergRael, thanks!)</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.7.1.1</strong>
+                                <ul>
+                                    <li>Fixed a bug with Soundcloud support where music sent to XBMC/Kodi would not play.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.7.1.0</strong>
+                                <ul>
+                                    <li>Added support embedded YouTube videos. The 'Play Now', '+Queue' & '+Favourite' buttons will work when there's 1 embedded video on the page. If there's more than 1 embedded video, they will turn into dropdown buttons.</li>
+                                    <li>Added support for sopcast and acestream links. (Code work by Alon Vlaadji, hurrah!)</li>
+                                    <li>Added AnimeLab to the list of supported sites.</li>
+                                    <li>Added context menus to YouTube's player. Works for embedded videos too.</li>
+                                    <li>Added a configuration option to use Pulsar instead of XBMCTorrent for torrent and magnet links.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.7.0.2</strong>
+                                <ul>
+                                    <li>Fixed a problem with context menus where magnet links are not being detected.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.7.0.1</strong>
+                                <ul>
+                                    <li>Fixed a problem with context menus where links were only detected at the end of the page load, causing links that were loaded dynamically later to be ignored.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.7.0.0</strong>
+                                <ul>
+                                    <li>There isn't much to offer feature-wise in this release. It's mostly background work. I've modularised the support for different sites so it's easier for other people to add support for their site. It's quite the rewrite so if you run into any problems for a supported site, please email me at khloke@gmail.com!</li>
+                                    <li>Added context menu support for youtu.be URL links.</li>
+                                    <li>Fixed an issue with youtube playlists where playlists with more than 25 items will only have 25 items queued to XBMC.</li>
+                                    <li>The play time is now showed on the remote.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.6.1.0:</strong>
+                                <ul>
+                                    <li>Fixed an issue where showing an image on XBMC while screensaver (dim) is running will not wake XBMC.</li>
+                                    <li>Added support for Finnish Web TV Services: Yle Areena, Katsomo and Ruutu. (Code work by Joonas Suominen, thank you!)</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.6.0.1:</strong>
+                                <ul>
+                                    <li>Fixed a number of bugs with the time scroller.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.6.0.0:</strong>
+                                <ul>
+                                    <li>I'd first like to thank everyone who donated, you guys are awesome! I swear it went to the coffee! Below are some of the stuff I did with the extra awake hours thanks to the caffeine.</li>
+                                    <li>Added a time-scroller to the remote!</li>
+                                    <li>Added context menu support for Vimeo links</li>
+                                    <li>Made it possible to use the 'Play Now' and '+Queue' buttons when a page is a direct link to a video/audio file.</li>
+                                    <li>Fixed a bug where if you keep the remote open, queue something, let it finish and queue something again, it will restart the previous video and add the current video to the end of the queue.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.5.1.0:</strong>
+                                <ul>
+                                    <li>With all the Chrome Extension adware news around, I thought I'd make this clear. I will never put ads in this extension, even if no one ever donates.</li>
+                                    <li>Added context menu support for direct video links!! (Let me know if I missed any file extensions via email)</li>
+                                    <li>Added support for Freeride.se videos.</li>
+                                    <li>Added support for ARD Mediathek videos. (Code work was done by Sebastian Monzel, everyone say thanks!)</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.5.0.0:</strong>
+                                <ul>
+                                    <li>Added context menus to show images on XBMC (Beta). This feature on XBMC is a little unstable and images like Gif is not supported.</li>
+                                    <li>Added context menus to play and queue direct links to music files. Supported extensions are: 'mp3', 'ogg', 'midi', 'wav', 'aiff', 'aac', 'flac', 'ape' and 'wma'.</li>
+                                    <li>Added support for MyCloudPlayers.com (Many thanks to cuckoo for the code work).</li>
+                                    <li>Added a donation page to the option tabs. If you like my work, consider buying me a coffee so I could spend more hours awake working on Play to XBMC.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.4.3.0:</strong>
+                                <ul>
+                                    <li>Added support for XBMCtorrent. You can now use the context menus to play magnet links. For more information on XBMCtorrent, click <a target="_blank" href="http://www.xbmchub.com/forums/general-video-addon-discussion/13153-%5Balpha%5D-xbmctorrent-torrent-streaming-xbmc.html">HERE</a>.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.4.2.1:</strong>
+                                <ul>
+                                    <li>Fixed a bug where Vimeo urls that ends with a # would be detected as invalid.</li>
+                                    <li>Allow context menus on Google redirected YouTube URLs.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.4.2.0:</strong>
+                                <ul>
+                                    <li>Fixed a bug with Twitch.tv where certain URL patterns are not correctly validated and therefore, leaving the 'Play' button disabled.</li>
+                                    <li>Added ability to queue entire Soundcloud sets as a playlist in XBMC.</li>
+                                    <li>Added support to play Khan Academy videos.</li>
+                                    <li>Added support for Hulu videos, with a catch. You must install the unofficial Hulu plugin by BlueCop. Find out more by clicking <a target="_blank" href="http://forum.xbmc.org/showthread.php?tid=121023">HERE</a>. (Many thanks to Yulius for this)</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.4.1.0:</strong>
+                                <ul>
+                                    <li>Show a tooltip to inform the user that the extension has been updated.</li>
+                                    <li>Changelist now available in the options menu. If you haven't seen this list before, I recommend that you go through this list once. You might find a feature that you've been waiting for.</li>
+                                    <li>Added support for Twitch.tv, but there's a catch: Only live streams supported. I can't seem to find a way to play non-live videos with the Twitch.TV plugin on XBMC. Will add it in once I have an idea.</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Update 1.4.0.0:</strong>
+                                <ul>
+                                    <li>Support for context menus on YouTube links have now been added. This is probably the second most requested feature after YouTube playlists. Context menus for other supported sites are coming, I just can't wait to bring you this update first :)</li>
+                                    <li>Fixed a bug where the buttons do not activate for Vimeo videos under a group.</li>
+                                </ul>
+                            </p>
+
+                            <p>
+                                <strong>Update 1.3.4.2:</strong>
+                                <ul>
+                                    <li>Added support for the other playlist page. (Thanks to Mark Cunningham for codework)</li>
+                                </ul>
+                            </p>
+
+                            <p>
+                                <strong>Update 1.3.4.0:</strong>
+                                <ul>
+                                    <li>Added support for YouTube playlists (Many thanks to Shlomi for doing the codework). Probably one of the most requested features, click on the dropdown menu to Queue entire YouTube playlists.</li>
+                                    <li>Added support for key bindings (Arrow keys, Backspace, Enter, I and C). With the extension popup open, you can use the listed keys to navigate XBMC.</li>
+                                </ul>
+                            </p>
+
+                            <p>
+                                <strong>Update 1.3.3.0:</strong>
+                                <ul>
+                                    <li>Added support for LiveLeak videos</li>
+                                </ul>
+                            </p>
+
+                            <p>
+                                <strong>Update 1.3.2.0:</strong>
+                                <ul>
+                                    <li>Added support for MixCloud* (Works with SoundCloud in the same playlist. Read more below)</li>
+                                </ul>
+                            </p>
+
+                            <p>
+                                <strong>Update 1.3.1.0</strong>
+                                <ul>
+                                    <li>Added support for multiple XBMC hosts and easy switching</li>
+                                </ul>
+                            </p>
+
+                            <p>
+                                <strong>Update 1.3.0.1:</strong>
+                                <ul>
+                                    <li>Minor bug fixes</li>
+                                </ul>
+                            </p>
+
+                            <p>
+                                <strong>Update 1.3.0.0:</strong>
+                                <ul>
+                                    <li>Added support for eBaumsWorld and SoundCloud* (SoundCloud works in a different playlist, more details below)</li>
+                                    <li>Added the ability to set the Repeat Mode on XBMC. Enable this in the settings.</li>
+                                    <li>Added the ability to play something next</li>
+                                    <li>Added the ability to remove the currently playing item from the playlist</li>
+                                    <li>Show the total number of items in the current playlist and the position it is currently in.</li>
+                                </ul>
+                                <br/>
+                            * Because XBMC handles audio and video content with different players, they also go into different playlists. That also means that you can't mix audio (MixCloud/SoundCloud) and video (YouTube etc) contents in the same queue.
+                            </p>
+
+                            <p>
+                                <strong>Update 1.2.6.1:</strong>
+                                <ul>
+                                    <li>Added support for DailyMotion. Again, this requires the DailyMotion plugin to be installed on XBMC</li>
+                                    <li>Fixed the 'Skip' and 'Previous' not working on newer versions of XBMC (v12+)</li>
+                                    <li>Last time I tested, I couldn't get a single CollegeHumor video to play, this is an issue with the plugin on XBMC, which is no longer supported.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="donate" style="text-align: center">
+                        <div>If you like what I did and would like to buy me a coffee, <br/>you can send me some bitcoins to the address below!</div>
+                        <div><img src="images/bitcoin_qr.png" height="200" width="200"></div>
+                        <div>1GcpoegwrJv7VBw51JCbbmiY6oun7kcn9c</div>
+                        <div>
+                            Or you could do it via PayPal:
+                            <img id="paypalDonate" src="images/btn_donate_LG.gif" style="cursor: pointer;"/>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="help" style="text-align: center">
+                        <a class="btn btn-large" href="https://github.com/khloke/play-to-xbmc-chrome/wiki/Getting-Started" target="_blank" style="width: 80%; margin-bottom: 10px">Getting Started</a><br/>
+                        <a class="btn btn-large" href="https://github.com/khloke/play-to-xbmc-chrome/wiki/Frequently-Asked-Questions" target="_blank" style="width: 80%; margin-bottom: 10px">Frequently Asked Questions</a><br/>
+                        <a class="btn btn-large" href="https://github.com/khloke/play-to-xbmc-chrome/issues" target="_blank" style="width: 80%; margin-bottom: 10px">Report Issues</a>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group" style="border-top: #e5e5e5 solid 1px; ">
+                <div class="controls" style="margin-top: 30px;">
+                    <a href="remote.html" class="btn">Back</a>
+                    <button id="saveBtn" type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls"><span id="status" class="alert alert-success" style="display: none;"></span></div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

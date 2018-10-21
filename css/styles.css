@@ -1,0 +1,118 @@
+#remoteRow {
+    text-align: center;
+    padding-bottom: 12px;
+}
+
+#remoteRow button {
+    background: none;
+    border: none;
+    padding: 0;
+    width: 40px;
+    margin: 0 3px;
+}
+
+#remoteRow button:hover {
+    cursor: pointer;
+}
+
+#remoteRow .playpause {
+    border: 1px solid #eee;
+    background-color: #fefefe;
+
+    padding: 12px 10px 12px 5px;
+    margin: 0 2px;
+    border-radius: 5px;
+}
+
+#volumeRow {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 195px;
+}
+
+#seekerRow {
+    text-align: center;
+    margin-left: 30px;
+    margin-right: auto;
+    width: 195px;
+}
+
+#seekerRow span.ui-slider-handle {
+    border: 1px solid #1586cc;
+    background: #179ccc 50% 50% repeat-x;
+    font-weight: bold;
+    color: #4c3000;
+    top: -0.6em;
+    border-radius: 10px;
+}
+
+#seekerRow span.ui-slider-handle:hover {
+    background-color: #0f7dcc;
+}
+
+#seekerRow .ui-widget-header {
+    background: #15A2E9 none;
+}
+
+#seekerRow .ui-slider-horizontal {
+    height: 2px;
+}
+
+.timeIndicator {
+    position: absolute;
+    top: 135px;
+}
+
+#currentTime {
+    left: 28px;
+}
+
+#totalTime {
+    right: 28px;
+}
+
+#buttonsRow {
+    text-align: center;
+}
+
+#buttonsRow .btn-group .single-action-btn {
+    padding: 5px;
+    margin-left: -1px;
+}
+
+#buttonsRow .btn-group .multi-video-btn {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    padding: 5px 7px;
+}
+
+.video-menu {
+    overflow: hidden;
+    max-width: 290px;
+    text-align: left;
+}
+
+.row {
+    margin: 15px auto;
+}
+
+.dropdown-menu .disabled>a:hover {
+    background: none;
+}
+
+#moreBtn {
+    padding: 5px 8px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1px;
+}
+
+#scrollerTime {
+    position: absolute;
+    background-color: white;
+    z-index: 999;
+    border: #d3d3d3 solid 1px;
+    border-radius: 3px;
+    padding: 2px 4px;
+}
