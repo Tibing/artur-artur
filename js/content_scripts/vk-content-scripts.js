@@ -143,7 +143,7 @@ function updateOneAudio(audio) {
             actions.appendChild(shareIcon);
 
             const parser = new DOMParser();
-            const baloonDocument = parser.parseFromString('<div class="tt_w tt_black toleft tt_down" style="position: absolute; opacity: 1; top: -27px; left: 18px; pointer-events: auto; display: block;"><div class="tt_text">Stream to Kodi</div></div>', 'text/html')
+            const baloonDocument = parser.parseFromString('<div class="tt_w tt_black toleft tt_down" style="position: absolute; opacity: 1; top: -27px; right: -5.5px; pointer-events: auto; display: block;"><div class="tt_text">Stream to Kodi</div></div>', 'text/html')
             const baloon = baloonDocument.body.firstChild;
 
             shareIcon.addEventListener('mouseenter', () => actions.appendChild(baloon));
