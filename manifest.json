@@ -215,7 +215,7 @@
   ],
   "description": "Play, queue and remote control your favourite online media on Kodi / XBMC.",
   "icons": {
-    "128": "images/tv.png",
+    "128": "images/icon-128.png",
     "16": "images/icon-16.png",
     "24": "images/icon.png"
   },
